@@ -4,7 +4,7 @@
  * GitHub: https://github.com/kanishkupadhyay1
  * Created: February 2026
  * Version: 1.0
- * Repository: Step_2026
+ * Repository: Step_B1P17
  *
  * Description:
  * A Java-based system that allows username registration,
