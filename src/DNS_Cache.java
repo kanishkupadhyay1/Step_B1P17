@@ -29,7 +29,7 @@ class Cache {
 
         this.ipAddress = ipAddress;
 
-        // convert TTL seconds → milliseconds
+        // seconds → milliseconds
         this.expiryTime = System.currentTimeMillis() + (ttlSeconds * 1000);
     }
 
@@ -40,7 +40,7 @@ class Cache {
 }
 
 
-// DNS Cache class
+
 public class DNS_Cache {
 
     private final int capacity;
@@ -66,12 +66,12 @@ public class DNS_Cache {
     }
 
 
-    // Resolve domain
+
     public synchronized String resolve(String domain) {
 
         Cache entry = cache.get(domain);
 
-        // Cache HIT
+        //  HIT
         if (entry != null && !entry.isExpired()) {
 
             hits++;
@@ -81,7 +81,7 @@ public class DNS_Cache {
             return entry.ipAddress;
         }
 
-        // Cache MISS
+        //  MISS
         miss++;
 
         System.out.println("Cache MISS for " + domain);
@@ -94,7 +94,7 @@ public class DNS_Cache {
     }
 
 
-    // Simulate DNS lookup
+
     private String queryUpstreamDNS(String domain) {
 
         try {
@@ -107,7 +107,7 @@ public class DNS_Cache {
     }
 
 
-    // Cleanup expired entries
+    // cleanup
     public synchronized void cleanup() {
 
         Iterator<Map.Entry<String, Cache>> iterator =
@@ -127,7 +127,7 @@ public class DNS_Cache {
     }
 
 
-    // Hit ratio
+    //ratio
     public double getHitRatio() {
 
         int total = hits + miss;
@@ -139,7 +139,7 @@ public class DNS_Cache {
     }
 
 
-    // Print stats
+
     public void printStats() {
 
         System.out.println("Cache Hits: " + hits);
@@ -148,20 +148,20 @@ public class DNS_Cache {
     }
 
 
-    // Main method
+
     public static void main(String[] args) throws InterruptedException {
 
         DNS_Cache dns = new DNS_Cache(3);
 
         System.out.println(dns.resolve("google.com"));
 
-        System.out.println(dns.resolve("google.com")); // HIT
+        System.out.println(dns.resolve("google.com"));
 
         System.out.println(dns.resolve("facebook.com"));
 
-        Thread.sleep(6000); // wait forexpiry
+        Thread.sleep(6000);
 
-        System.out.println(dns.resolve("google.com")); // MISS
+        System.out.println(dns.resolve("google.com"));
 
         dns.cleanup();
 
