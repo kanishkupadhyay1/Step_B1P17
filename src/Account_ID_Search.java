@@ -6,7 +6,7 @@ public class Account_ID_Search {
         return -1;
     }
 
-    static int binary(String[] arr, String target) {    // binary search
+    static int binary(String[] arr, String target) {    // binary  search
         int l = 0, r = arr.length - 1;
         while (l <= r) {
             int m = (l + r) / 2;

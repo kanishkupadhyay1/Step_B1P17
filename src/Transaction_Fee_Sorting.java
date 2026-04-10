@@ -27,7 +27,7 @@ public class Transaction_Fee_Sorting {
         }
     }
 
-    static void insertionSort(List<Transaction> list) { // insertion sort
+    static void insertionSort(List<Transaction> list) { // insertion  sort
         for (int i = 1; i < list.size(); i++) {
             Transaction key = list.get(i);
             int j = i - 1;
