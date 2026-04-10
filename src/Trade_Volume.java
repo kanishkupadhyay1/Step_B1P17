@@ -8,7 +8,7 @@ class Trade {
 
 public class Trade_Volume {
 
-    static void mergeSort(Trade[] arr, int l, int r) {
+    static void mergeSort(Trade[] arr, int l, int r) {  //merge sort
         if (l >= r) return;
         int m = (l + r) / 2;
         mergeSort(arr, l, m);

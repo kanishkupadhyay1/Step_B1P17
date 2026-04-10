@@ -11,7 +11,7 @@ class Asset {
 
 public class Portfolio_Sorting {
 
-    static void mergeSort(Asset[] arr, int l, int r) {
+    static void mergeSort(Asset[] arr, int l, int r) {  //merge sory
         if (l >= r) return;
         int m = (l + r) / 2;
         mergeSort(arr, l, m);

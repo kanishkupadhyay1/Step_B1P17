@@ -13,7 +13,7 @@ class Transaction {
 }
 
 public class Transaction_Fee_Sorting {
-    static void bubbleSort(List<Transaction> list) {
+    static void bubbleSort(List<Transaction> list) {    // bubble sort
         int n = list.size();
         for (int i = 0; i < n - 1; i++) {
             boolean swapped = false;
@@ -27,7 +27,7 @@ public class Transaction_Fee_Sorting {
         }
     }
 
-    static void insertionSort(List<Transaction> list) {
+    static void insertionSort(List<Transaction> list) { // insertion sort
         for (int i = 1; i < list.size(); i++) {
             Transaction key = list.get(i);
             int j = i - 1;
